@@ -2,7 +2,7 @@ import React from "react"
 
 const ThreadContainer = () => (
   <div>
-    <h1>Thread View</h1>
+    <h1>List of POSTS/COMMENTS will go here</h1>
   </div>
 )
 

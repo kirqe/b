@@ -1,10 +1,93 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+html, body {
+  font-family: Verdana,sans-serif;
+  background-color: #EEEEEE;
+  color: #333333;
 }
 
+body {
+  margin: 0;
+  margin-bottom: auto;
+  font-size:0.9em;
+}
+
+hr {
+  clear: both;
+  border: none;
+  border-top: 1px solid #DDD;
+  height: 0;
+}
+
+.header {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.header a {
+  margin-right: 5px;
+}
+
+.boards_list {
+  padding: 8px;
+}
+
+.board_name {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+a,
+a:hover,
+a:visited {
+
+  color: #ff7600;
+}
 a.board_link {
-  margin-left: 5px;
+  margin-right: 5px;
   text-decoration: none;
+}
+
+.board_wrapper {
+  border: 1px solid #eee;
+  background-color: #eee;
+  padding: 8px;
+}
+
+.post {
+  /* padding: 10px; */
+  margin-bottom: 10px;
+  border-radius: 2px;
+  word-wrap: break-word;
+}
+
+.reply {
+  padding: 10px;
+  background: #DDDDDD;
+  border: solid 1px #CCCCCC;
+  min-width: 33em;
+  max-width: calc(100vw - 290px);
+  float:left;
+  clear:both
+}
+
+
+.post_details,
+.post_body {
+  display: block;
+  font-size: 14px;
+}
+.post_body {
+  margin-bottom: 20px;
+}
+
+.post_details {
+  margin-bottom: 10px;
+}
+
+
+.post_details .by,
+.date,
+.repl {
+  display: inline-block;
+  margin-right: 10px;
 }
