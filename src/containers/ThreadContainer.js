@@ -1,8 +1,10 @@
 import React from "react"
+import Thread from "../components/Thread"
 
 const ThreadContainer = ({ match, location }) => (
-  <div>
-    <h1>List of POSTS/COMMENTS will go here {match.params.perm} {location.pathname}</h1>
+  <div className="thread_wrapper">
+    <h1>{match.params.perm} {location.pathname}</h1>
+    <Thread />
   </div>
 )
 
