@@ -78,11 +78,11 @@ class Board extends Component {
     const threads = this.state.threads.map((thread) => (
       <div key={thread.id}>
         <div className="post">
-          <Post isReply={false} post={thread} />
+          <Post isReply={false} post={thread} perm={this.props.perm} />
           <span className="reply_wrap">
             {thread.replies.slice(0, 3).map((reply) => {
               return (<Post isReply={true} post={reply} key={reply.id} />)
-            })}
+            }, this)}
           </span>
         </div>
         <hr/>

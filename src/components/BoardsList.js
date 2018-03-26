@@ -6,8 +6,8 @@ class BoardsList extends Component {
     super(props);
     this.state = {
       boards: [
-        { id: 1, name: "news", perm: "news"},
-        { id: 2, name: "funny", perm: "funny"}
+        { id: 1, name: "news", perm: "/news"},
+        { id: 2, name: "funny", perm: "/funny"}
       ]
     }
   }

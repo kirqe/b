@@ -7,7 +7,7 @@ class Post extends Component {
   }
 
   render() {
-    const {post, isReply} = this.props
+    const {post, isReply, perm} = this.props
 
     return (
       <div className={"post" + (isReply ? " reply" : "")} >
@@ -16,7 +16,7 @@ class Post extends Component {
           <span className="date">{post.date}</span>
           {
             isReply ? "" :
-            <span className="repl">[<Link className="thread_link" to="">answer</Link>]</span>
+            <span className="repl">[<Link className="thread_link" to={`${perm}/${post.id}`} >answer</Link>]</span>
           }
         </span>
         <span className="reply_body">
