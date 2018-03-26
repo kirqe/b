@@ -11,7 +11,7 @@ import BoardsList from "./components/BoardsList"
 import Header from "./components/Header"
 
 
-import { BrowserHistory as Router, Route, BrowserRouter, Link } from "react-router-dom"
+import { Route, BrowserRouter } from "react-router-dom"
 
 
 class App extends Component {

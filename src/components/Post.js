@@ -2,10 +2,6 @@ import React, { Component } from "react"
 import { Link } from "react-router-dom"
 
 class Post extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
     const {post, isReply, perm} = this.props
 

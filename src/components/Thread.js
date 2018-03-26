@@ -11,7 +11,6 @@ const mapStateToProps = (state) => {
 class ThreadsList extends Component {
 
   render() {
-    const replies = this.props.thread.replies
 
     return(
       <div>
