@@ -16,7 +16,7 @@
 end
 
 
-300.times do
+500.times do
   Topic.create(
     board_id: rand(1..10),
     body: FFaker::Lorem.sentence,
@@ -26,7 +26,7 @@ end
 
 500.times do
   Post.create(
-    topic_id: rand(1..300),
+    topic_id: rand(1..500),
     body: FFaker::Lorem.sentence,
   )
 end
