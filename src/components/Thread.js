@@ -2,28 +2,39 @@ import React, { Component } from "react"
 import Post from "./Post"
 import Form from "./Form"
 import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import { fetch_thread } from "../actions/threadActions"
 
 const mapStateToProps = (state) => {
-  return {thread: state.thread.thread}
+  return { thread: state.thread.thread }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetch_thread }, dispatch)
 }
 
 
 class ThreadsList extends Component {
+  componentDidMount() {
+    this.props.fetch_thread(this.props.params)
+  }
 
   render() {
-
+    const replies = this.props.thread.posts
     return(
       <div>
-        <div className="reply_form_wrapper">
-          <Form />
-        </div>
+
         <div key={this.props.thread.id}>
           <div className="post">
             <Post isReply={false} post={this.props.thread} perm={this.props.perm} />
             <span className="reply_wrap">
-              {this.props.thread.replies.map((reply) => {
-                return (<Post isReply={true} post={reply} key={reply.id} />)
-              }, this)}
+              {
+                (replies) ?
+                replies.map((post) => {
+                  return (<Post isReply={true} post={post} key={post.id} />)
+                }, this) :
+                ""
+              }
             </span>
           </div>
           <hr/>
@@ -34,6 +45,6 @@ class ThreadsList extends Component {
   }
 }
 
-const Thread = connect(mapStateToProps)(ThreadsList)
+const Thread = connect(mapStateToProps, mapDispatchToProps)(ThreadsList)
 
 export default Thread

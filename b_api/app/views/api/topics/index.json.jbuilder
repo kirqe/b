@@ -3,7 +3,8 @@ json.topics @topics do |topic|
   json.board_id topic.board_id
   json.body topic.body
   json.created_at topic.created_at
-  json.url api_board_topic_url(topic.board, topic)
+  json.replies topic.posts.length
+  json.url api_board_topic_url(topic.board.permalink, topic)
   json.posts topic.posts.limit(3) do |post|
     json.id post.id
     json.topic_id post.topic_id

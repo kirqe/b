@@ -1,7 +1,7 @@
 json.boards @boards do |board|
   json.id board.id
   json.permalink board.permalink
-  json.url api_board_topics_url(board)
+  json.url api_board_topics_url(board.permalink)
   json.description board.description
   json.created_at board.created_at
 end

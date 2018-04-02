@@ -9,7 +9,7 @@ class Post extends Component {
       <div className={"post" + (isReply ? " reply" : "")} >
         <span className="post_details ">
           <span className="by">by anonymous</span>
-          <span className="date">{post.date}</span>
+          <span className="date">{post.created_at}</span>
           {
             isReply ? "" :
             <span className="repl">[<Link className="thread_link" to={`${perm}/${post.id}`} >answer</Link>]</span>
@@ -20,7 +20,7 @@ class Post extends Component {
         </span>
         {
           (isReply && !perm) ? "" :
-          <span className="post_footer">{post.replies.length} replies</span>
+          <span className="post_footer">{post.replies} replies</span>
         }
       </div>
     )
