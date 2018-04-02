@@ -1,22 +1,27 @@
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
 import Post from "./Post"
-
+import Waypoint from 'react-waypoint';
 import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
-import { fetch_board } from "../actions/boardActions"
+import { fetch_board, fetch_more_boards } from "../actions/boardActions"
 
 const mapStateToProps = (state) => {
   return {
-    topics: state.board.topics
+    topics: state.board.topics,
+    next_href: state.board.next_href
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetch_board }, dispatch)
+  return bindActionCreators({ fetch_board, fetch_more_boards }, dispatch)
 }
 
 class BoardThreads extends Component {
+  constructor(props) {
+    super(props)
+    this.fetch_more = this.fetch_more.bind(this)
+  }
+
   componentWillMount() {
     this.props.fetch_board(this.props.perm)
   }
@@ -25,6 +30,10 @@ class BoardThreads extends Component {
     if (this.props.perm !== nextProps.perm) {
       this.props.fetch_board(nextProps.perm)
     }
+  }
+
+  fetch_more() {
+    if (this.props.next_href) { this.props.fetch_more_boards(this.props.next_href) }
   }
 
   render() {
@@ -46,6 +55,13 @@ class BoardThreads extends Component {
     return (
       <div>
         {threads}
+        {
+          threads.length > 0 ?
+          <Waypoint
+            onEnter={()=>{this.fetch_more()}}
+          /> : ""
+        }
+
       </div>
     )
   }

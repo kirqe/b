@@ -1,9 +1,13 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import BoardsList from "./BoardsList"
 
 const Header = () => (
   <div className="header">
-    <Link className="" to="/">Home</Link>
+    <BoardsList />
+    <div  className="right">
+      <Link className="" to="/">Home</Link>
+    </div>
   </div>
 )
 

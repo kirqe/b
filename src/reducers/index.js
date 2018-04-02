@@ -1,10 +1,10 @@
 import { combineReducers } from "redux"
 import boardReducer from "./boardReducer"
-import threadReducer from "./threadReducer"
+import topicReducer from "./topicReducer"
 
 const rootReducer = combineReducers({
   board: boardReducer,
-  thread: threadReducer
+  topic: topicReducer
 })
 
 export default rootReducer;
