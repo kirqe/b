@@ -6,7 +6,7 @@ class BoardContainer extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      perm: props.match.params.perm,
+
       activeForm: false
     }
     this.toggleForm = this.toggleForm.bind(this)
@@ -24,10 +24,10 @@ class BoardContainer extends Component {
     const bt = this.state.activeForm ? "Close form" : "Reply to thread"
     return(
       <div className="board_wrapper">
-        <h1 className="board_name">/{this.state.perm}</h1>
+        <h1 className="board_name">/{this.props.match.params.perm}</h1>
         <a className="toggle_form" onClick={this.toggleForm}>{bt}</a>
-        { this.state.activeForm ? <Form /> : ""}
-        <Board perm={this.state.perm}/>
+        { this.state.activeForm ? <Form perm={this.props.match.params.perm}/> : ""}
+        <Board perm={this.props.match.params.perm}/>
       </div>
     )
   }

@@ -10,7 +10,25 @@ import HomeContainer from "./containers/HomeContainer"
 import Header from "./components/Header"
 import { Route, BrowserRouter } from "react-router-dom"
 
+
+import { connect } from "react-redux"
+import { bindActionCreators } from "redux"
+import { fetch_boards } from "./actions/boardActions"
+
+const mapStateToProps = (state) => {
+  return {
+    boards: state.board.boards
+  };
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ fetch_boards }, dispatch);
+}
+
 class App extends Component {
+  componentDidMount() {
+    this.props.fetch_boards()
+  }
   render() {
     return (
       <BrowserRouter>
@@ -26,4 +44,5 @@ class App extends Component {
   }
 }
 
-export default App;
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

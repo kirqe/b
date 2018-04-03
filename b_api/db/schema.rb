@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180327011055) do
+ActiveRecord::Schema.define(version: 20180403231840) do
 
   create_table "boards", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,9 @@ ActiveRecord::Schema.define(version: 20180327011055) do
     t.string "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "options"
+    t.string "subject"
     t.index ["board_id"], name: "index_topics_on_board_id"
   end
 

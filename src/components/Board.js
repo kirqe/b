@@ -16,7 +16,7 @@ const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({ fetch_board, fetch_more_boards }, dispatch)
 }
 
-class BoardThreads extends Component {
+class Board extends Component {
   constructor(props) {
     super(props)
     this.fetch_more = this.fetch_more.bind(this)
@@ -67,6 +67,4 @@ class BoardThreads extends Component {
   }
 }
 
-const Board = connect(mapStateToProps, mapDispatchToProps)(BoardThreads)
-
-export default Board
+export default connect(mapStateToProps, mapDispatchToProps)(Board)

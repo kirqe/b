@@ -5,8 +5,9 @@ import BoardsList from "./BoardsList"
 const Header = () => (
   <div className="header">
     <BoardsList />
-    <div  className="right">
-      <Link className="" to="/">Home</Link>
+
+    <div className="right">
+      <Link to="/">Home</Link>
     </div>
   </div>
 )

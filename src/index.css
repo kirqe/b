@@ -33,6 +33,16 @@ hr {
   /* padding: 8px 0; */
   display: inline-block;
 }
+.boards_list_home {
+
+  /* display: block; */
+  margin: 10px auto;
+
+}
+.boards_list_home td {
+  border: 1px solid #ddd;
+  padding: 0 10px;
+}
 
 .board_name {
   text-align: center;
@@ -57,7 +67,7 @@ a.board_link {
 }
 
 .board_wrapper,
-.thread_wrapper {
+.topic_wrapper {
   border: 1px solid #eee;
   background-color: #eee;
   padding: 8px;
