@@ -38,6 +38,12 @@ hr {
   text-align: center;
   margin: 50px 0;
 }
+.toggle_form {
+  margin: 50px 0;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+}
 
 a,
 a:hover,
@@ -102,12 +108,50 @@ a.board_link {
   display: inline-block;
   margin-right: 10px;
 }
-.reply_form_wrapper {
-  width: 500px;
 
-  margin-bottom: 20px;
+.form_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
-.RichTextEditor__root___2QXK- .public-DraftEditor-content {
-  min-height: 110px;
+#form td #name{
+  width: 250px;
+  margin-right: 0;
+  float: left;
+}
+
+#form td #submit {
+  margin: 0;
+  margin-left: 2px;
+  width: 88px;
+  float: left;
+}
+
+#form td #subject,
+#form td #options,
+#form td #body {
+  width: 340px;
+  margin-right: 0;
+  float: left;
+}
+
+#form td {
+  vertical-align: top;
+  font-size: 13px;
+  padding-right: 10px;
+  font-weight: bold;
+}
+
+input[type="text"], input[type="password"], textarea {
+    padding: 0;
+    margin: 0;
+    border: 1px solid #CACACA;
+    outline: medium none;
+    padding: 2px 4px;
+}
+input[type="button"], input[type="submit"] {
+    padding: 2px 6px;
+    border: 1px solid #CACACA;
+    background: #EAEAEA;
 }
