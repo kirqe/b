@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-10.times do
+5.times do
   Board.create(
     name: FFaker::Name.name,
     description: FFaker::Lorem.phrase,
@@ -18,7 +18,7 @@ end
 
 500.times do
   Topic.create(
-    board_id: rand(1..10),
+    board_id: rand(1..5),
     body: FFaker::Lorem.sentence,
   )
 end

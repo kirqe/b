@@ -1,4 +1,4 @@
-import { FETCH_TOPIC, REPLY_TO_TOPIC, ADD_TOPIC, FETCH_BOARD } from "./actionTypes"
+import { FETCH_TOPIC, REPLY_TO_TOPIC, ADD_TOPIC} from "./actionTypes"
 import axios from "axios";
 const api = "http://localhost:3000/api/boards/"
 
@@ -24,6 +24,7 @@ export function reply_to_topic(reply) {
 
 export function add_topic(perm, topic) {
   return dispatch => {
+
     axios.post(api + perm + "/topics/", topic)
     .then((res) => {
       dispatch({ type: ADD_TOPIC, payload: res.data })

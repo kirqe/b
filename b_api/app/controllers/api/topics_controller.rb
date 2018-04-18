@@ -11,6 +11,10 @@ class Api::TopicsController < Api::ApiController
 
   def create
     @topic = @board.topics.new(topic_params)
+
+    p "-----------"
+    p @topic
+    p "-----------"
     if @topic.save
       render status: :created
     else
@@ -20,7 +24,7 @@ class Api::TopicsController < Api::ApiController
 
   private
     def topic_params
-      params.require(:topic).permit(:name, :options, :subject, :body)
+      params.require(:topic).permit(:name, :options, :subject, :body, {images: []})
     end
 
     def set_board
